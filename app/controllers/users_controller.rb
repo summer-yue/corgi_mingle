@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     if @user.save
       # Handle a successful save.
       flash[:success] = "Welcome to the Corgi Mingle!"
+      log_in @user
       redirect_to user_url(@user)
     else
       render 'new'
