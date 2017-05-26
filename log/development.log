@@ -3742,3 +3742,1183 @@ Processing by UsersController#edit as HTML
 Completed 200 OK in 66ms (Views: 61.2ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-05-26 13:37:15 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1979.6ms)
+  Rendered layouts/_rails_default.html.erb (72.3ms) [cache miss]
+  Rendered layouts/_shim.html.erb (0.4ms) [cache miss]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (18.0ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 2090ms (Views: 2081.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-05-26 13:37:19 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_rails_default.html.erb (38.7ms) [cache miss]
+  Rendered layouts/_shim.html.erb (0.3ms) [cache miss]
+  Rendered layouts/_header.html.erb (1.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 59ms (Views: 55.5ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-05-26 13:37:30 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"on74w6lPPgqp1bPkRV3P2DjOgayF8AXXQl0wjhlRK4mFlA0sMrfqHrFZ8cncTxFjVzMkuv9tw3AZdc/X+fcL5Q=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-26 13:37:30 -0700
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_rails_default.html.erb (31.4ms) [cache miss]
+  Rendered layouts/_shim.html.erb (0.3ms) [cache miss]
+  Rendered layouts/_header.html.erb (6.4ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 51ms (Views: 49.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-05-26 13:37:32 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.1ms) [cache miss]
+  Rendered users/_form.html.erb (29.2ms) [cache miss]
+  Rendered users/new.html.erb within layouts/application (30.8ms)
+  Rendered layouts/_rails_default.html.erb (30.7ms) [cache miss]
+  Rendered layouts/_shim.html.erb (0.3ms) [cache miss]
+  Rendered layouts/_header.html.erb (0.9ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.9ms) [cache miss]
+Completed 200 OK in 78ms (Views: 74.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-26 13:37:56 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"82MViwz+OxqPUxOUL/9iTWKuvGUrlsUIhId7fuJa31YrNhrSqHIw+XTyB5fFXe/yiHc114GffiB9vgA6sFf6yg==", "user"=>{"name"=>"Sumsum", "email"=>"s@s.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "s@s.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sumsum"], ["email", "s@s.com"], ["created_at", "2017-05-26 20:37:56.892896"], ["updated_at", "2017-05-26 20:37:56.892896"], ["password_digest", "$2a$10$nz82WEU.V163LURHjLBLkusdFol2oX1.zeC7m5bnP/sk7zU1Da.Iy"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 83ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-05-26 13:37:56 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_rails_default.html.erb (29.0ms) [cache miss]
+  Rendered layouts/_shim.html.erb (0.3ms) [cache miss]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 43ms (Views: 40.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-05-26 13:38:01 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_rails_default.html.erb (32.8ms) [cache miss]
+  Rendered layouts/_shim.html.erb (0.3ms) [cache miss]
+  Rendered layouts/_header.html.erb (1.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 55ms (Views: 50.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-05-26 13:38:13 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_rails_default.html.erb (40.7ms) [cache miss]
+  Rendered layouts/_shim.html.erb (0.6ms) [cache miss]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.2ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 63ms (Views: 58.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-05-26 13:38:15 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_rails_default.html.erb (34.3ms) [cache miss]
+  Rendered layouts/_shim.html.erb (0.3ms) [cache miss]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.0ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 52ms (Views: 49.9ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-05-26 13:41:49 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2Xj7i686kO7DRYTuMpEcVFA2nj/2JiukO997NXwls4H+kg5kNMJE+tvJxsOrg8LvP8s7KYy77QNg94RsnIOT7Q=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-26 13:41:49 -0700
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_rails_default.html.erb (30.8ms) [cache miss]
+  Rendered layouts/_shim.html.erb (0.3ms) [cache miss]
+  Rendered layouts/_header.html.erb (1.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 48ms (Views: 46.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-05-26 13:42:39 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_rails_default.html.erb (31.5ms) [cache miss]
+  Rendered layouts/_shim.html.erb (0.3ms) [cache miss]
+  Rendered layouts/_header.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 51ms (Views: 48.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-05-26 13:42:40 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5mNIfBBX9pFuy1015qcx+ODuvs4Tr3oLankKJEIRGM5LWlsV1D0vQP+KLEU2YYBh0b6ySfWRZuXXt0lhoZDCeA==", "session"=>{"email"=>"s@s.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "s@s.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 68ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-05-26 13:42:40 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_rails_default.html.erb (29.8ms) [cache miss]
+  Rendered layouts/_shim.html.erb (0.3ms) [cache miss]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 46ms (Views: 43.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-26 13:46:17 -0700
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_rails_default.html.erb (28.4ms) [cache miss]
+  Rendered layouts/_shim.html.erb (0.3ms) [cache miss]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.4ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 47ms (Views: 45.0ms | ActiveRecord: 0.1ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20170524012227)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170524012227"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexToUsersEmail (20170524020835)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170524020835"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordDigestToUsers (20170524021808)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170524021808"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddRememberDigestToUsers (20170525215518)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_digest" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170525215518"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-05-26 20:50:39.638102"], ["updated_at", "2017-05-26 20:50:39.638102"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Example User"], ["email", "example@corgimingle.org"], ["created_at", "2017-05-26 20:51:04.039680"], ["updated_at", "2017-05-26 20:51:04.039680"], ["password_digest", "$2a$10$hMxo87lcB9yDOUNSLCLdEuWz9Sdxe9r7aMxRPW9p7xaM.UKQvFRdy"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-1@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Delmer Upton"], ["email", "example-1@corgimingle.org"], ["created_at", "2017-05-26 20:51:04.378540"], ["updated_at", "2017-05-26 20:51:04.378540"], ["password_digest", "$2a$10$l.dSfveY3FXinexzPgdmh.1uvdkxohnxxpA1kMStpCtDn0ebw6E66"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-2@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Miss Eugene Osinski"], ["email", "example-2@corgimingle.org"], ["created_at", "2017-05-26 20:51:04.445200"], ["updated_at", "2017-05-26 20:51:04.445200"], ["password_digest", "$2a$10$HN2g3GHmyIHAADgloDGE8O2vSentJZq3nN1fJIdqcfKLb8mgc6d7u"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-3@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ivah Conroy"], ["email", "example-3@corgimingle.org"], ["created_at", "2017-05-26 20:51:04.507853"], ["updated_at", "2017-05-26 20:51:04.507853"], ["password_digest", "$2a$10$3JNzhYmVJgyoh8dhJfpXTe/E5mZaQiN1KTkzVp7kUlmO3Mf28NbgC"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-4@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Josefina Bauch"], ["email", "example-4@corgimingle.org"], ["created_at", "2017-05-26 20:51:04.575047"], ["updated_at", "2017-05-26 20:51:04.575047"], ["password_digest", "$2a$10$hIQbD0LxuulfQSOMujz4jOh9AzZogWMKJX3EX12hgnPph0p939O62"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-5@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Kirsten Larson"], ["email", "example-5@corgimingle.org"], ["created_at", "2017-05-26 20:51:04.643511"], ["updated_at", "2017-05-26 20:51:04.643511"], ["password_digest", "$2a$10$hNo7KBjRX8sYhRyFR8KMHOBw0h4p8xgB/xOG7VZEYH0gWk6E6Y6Xi"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-6@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Neoma VonRueden"], ["email", "example-6@corgimingle.org"], ["created_at", "2017-05-26 20:51:04.708348"], ["updated_at", "2017-05-26 20:51:04.708348"], ["password_digest", "$2a$10$BeFJjCQsx7uzTkcM4ejYcejBkODZ7regl5lodMMLZglQRjKFfn2MC"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-7@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tevin Nicolas"], ["email", "example-7@corgimingle.org"], ["created_at", "2017-05-26 20:51:04.772392"], ["updated_at", "2017-05-26 20:51:04.772392"], ["password_digest", "$2a$10$A5vm70/nwQi.ESVJvPku9uAc8Ox5pedeek/jjIfSKHGdBOobcQ2wy"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-8@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bernard Baumbach"], ["email", "example-8@corgimingle.org"], ["created_at", "2017-05-26 20:51:04.837898"], ["updated_at", "2017-05-26 20:51:04.837898"], ["password_digest", "$2a$10$8.z3mXkQZL8tlzdylqoDIucrEkKfJkTPZaC1Jnpsp91zWznnyC2TK"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-9@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ms. Howell Mueller"], ["email", "example-9@corgimingle.org"], ["created_at", "2017-05-26 20:51:04.922482"], ["updated_at", "2017-05-26 20:51:04.922482"], ["password_digest", "$2a$10$WCTzDaKrysqjNsPRtD3X3.MDVwS7u3JvqPr7YjjlspPHO2Ik6J7sK"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-10@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brian Lowe"], ["email", "example-10@corgimingle.org"], ["created_at", "2017-05-26 20:51:04.998429"], ["updated_at", "2017-05-26 20:51:04.998429"], ["password_digest", "$2a$10$WWdjXken32RXwpCEg8l/O.GHteSkX9mnPqR9F0M21BByR6kpruAYS"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-11@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Madilyn Dicki"], ["email", "example-11@corgimingle.org"], ["created_at", "2017-05-26 20:51:05.072333"], ["updated_at", "2017-05-26 20:51:05.072333"], ["password_digest", "$2a$10$8tQj4IIL0zX7PJ3tjUrzU.f/xKXBOd06Ar1k1dBAXc5BZejYVSfFi"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-12@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Miss Ebony Baumbach"], ["email", "example-12@corgimingle.org"], ["created_at", "2017-05-26 20:51:05.141157"], ["updated_at", "2017-05-26 20:51:05.141157"], ["password_digest", "$2a$10$Eh3ANIlQP8Ue8ViRWZD/nOseiOn9.vFi1YCsY9PywoHJ1rfq3QBvS"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-13@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ona Greenfelder"], ["email", "example-13@corgimingle.org"], ["created_at", "2017-05-26 20:51:05.204889"], ["updated_at", "2017-05-26 20:51:05.204889"], ["password_digest", "$2a$10$.XJDWzUqpCZRwqqj3HvlkOd.K7zvAJKz34uggWMsLThwCTvfoRk5S"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-14@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mekhi Carter I"], ["email", "example-14@corgimingle.org"], ["created_at", "2017-05-26 20:51:05.271030"], ["updated_at", "2017-05-26 20:51:05.271030"], ["password_digest", "$2a$10$KTo2klIPAt/yncC1.FmuEusAOEVXNloifRekfDInEKMsrVx5XhPJy"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-15@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "D'angelo Doyle"], ["email", "example-15@corgimingle.org"], ["created_at", "2017-05-26 20:51:05.336451"], ["updated_at", "2017-05-26 20:51:05.336451"], ["password_digest", "$2a$10$bfVVBX9njrP.ZQ0WD/Tne.Xk8SUvevQJAluuMj8OHmmzdTOwSknhG"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-16@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Muhammad Brakus II"], ["email", "example-16@corgimingle.org"], ["created_at", "2017-05-26 20:51:05.404515"], ["updated_at", "2017-05-26 20:51:05.404515"], ["password_digest", "$2a$10$iIr9SVr1Z3rtJY1SCW.9DuiQJuXo9HNxt1Fez6F62KD3mNbrqBAT6"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-17@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ms. Dovie Rath"], ["email", "example-17@corgimingle.org"], ["created_at", "2017-05-26 20:51:05.471019"], ["updated_at", "2017-05-26 20:51:05.471019"], ["password_digest", "$2a$10$PWUgt1x3H9mYKxG.E3EVDOU2ROwE.CpI/S1r17iHPYzwpqU0PGsIG"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-18@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Doyle Dare"], ["email", "example-18@corgimingle.org"], ["created_at", "2017-05-26 20:51:05.538101"], ["updated_at", "2017-05-26 20:51:05.538101"], ["password_digest", "$2a$10$XDmqXhhdTU.V3LNjBN9Xwe7YGFUlaZbZDfU0cEw0IPxWEByqFI0Yu"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-19@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Alexandre Haag"], ["email", "example-19@corgimingle.org"], ["created_at", "2017-05-26 20:51:05.606253"], ["updated_at", "2017-05-26 20:51:05.606253"], ["password_digest", "$2a$10$RQB5Wv6V1pSDFae3D7wWvOeRrQXZwD4DkeIQmL1CcQNmZIEv7Asn6"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-20@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Stevie Braun"], ["email", "example-20@corgimingle.org"], ["created_at", "2017-05-26 20:51:05.672013"], ["updated_at", "2017-05-26 20:51:05.672013"], ["password_digest", "$2a$10$iN5ayHfMTB4Dd7e3IrOa5uS1CG5FD2X5EytQ/7vu.703IH/v2lVZ6"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-21@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Alan Emmerich"], ["email", "example-21@corgimingle.org"], ["created_at", "2017-05-26 20:51:05.737982"], ["updated_at", "2017-05-26 20:51:05.737982"], ["password_digest", "$2a$10$qxv56/e92st1/fvXEzfcTOeMw82Q.b.p8/amYBYKEuIGD1WBdY1Ve"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-22@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lonnie Kerluke"], ["email", "example-22@corgimingle.org"], ["created_at", "2017-05-26 20:51:05.800799"], ["updated_at", "2017-05-26 20:51:05.800799"], ["password_digest", "$2a$10$/ARDsFJClfQHhVMOBM1faeM6RuSyOWaYWgxEzqqIK0nUNuV1vVD.i"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-23@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dr. Alysa Deckow"], ["email", "example-23@corgimingle.org"], ["created_at", "2017-05-26 20:51:05.868933"], ["updated_at", "2017-05-26 20:51:05.868933"], ["password_digest", "$2a$10$XQP9AV8x/bFK0twrIxyqtur.NuwGdTDL1kVI6E1dxMt3WV.ADWv5a"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-24@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mr. Thea Swaniawski"], ["email", "example-24@corgimingle.org"], ["created_at", "2017-05-26 20:51:05.933130"], ["updated_at", "2017-05-26 20:51:05.933130"], ["password_digest", "$2a$10$qhnHB0jDI21tH/fs3trPeuoSdo4HvHKby4xve579q0qiUmq.PzGyO"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-25@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Rolando Brekke"], ["email", "example-25@corgimingle.org"], ["created_at", "2017-05-26 20:51:05.999250"], ["updated_at", "2017-05-26 20:51:05.999250"], ["password_digest", "$2a$10$CqBf7Jam3DyxCWsVOqc7F.7rWwyTb7Yf8TnzEvtGzbCr/S2Q5GLWW"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-26@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Curtis Bins"], ["email", "example-26@corgimingle.org"], ["created_at", "2017-05-26 20:51:06.064830"], ["updated_at", "2017-05-26 20:51:06.064830"], ["password_digest", "$2a$10$MwEMOaUw4xCCMRmbEwx26ufGw/pmkZ8mq4SBRAOurAbcFlEsYriAC"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-27@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Shemar Padberg"], ["email", "example-27@corgimingle.org"], ["created_at", "2017-05-26 20:51:06.130122"], ["updated_at", "2017-05-26 20:51:06.130122"], ["password_digest", "$2a$10$X3IQC9Df69Rk4sH46Pn/LOOrbnmIm0J/zBoaHsW1bidR3bF3MV//a"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-28@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Oswaldo Sawayn"], ["email", "example-28@corgimingle.org"], ["created_at", "2017-05-26 20:51:06.196118"], ["updated_at", "2017-05-26 20:51:06.196118"], ["password_digest", "$2a$10$MP6XP2P0OwQDfJhGixiR/en3pEDvN5iv/hwTUWJaE4JQePqwfQUFO"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-29@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Alisha Durgan"], ["email", "example-29@corgimingle.org"], ["created_at", "2017-05-26 20:51:06.264561"], ["updated_at", "2017-05-26 20:51:06.264561"], ["password_digest", "$2a$10$UkXW36hE.qkvQo450N.VMOytTvudnGOLI7hffAiDIk6tZyDfQ1BOW"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-30@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cierra Keebler PhD"], ["email", "example-30@corgimingle.org"], ["created_at", "2017-05-26 20:51:06.334129"], ["updated_at", "2017-05-26 20:51:06.334129"], ["password_digest", "$2a$10$iM.9fA.uOUM5pcKQf4stSOLr46bYzf9Kr4XfDcmx1PNytOPZVLlsu"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-31@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Murray Cruickshank"], ["email", "example-31@corgimingle.org"], ["created_at", "2017-05-26 20:51:06.405046"], ["updated_at", "2017-05-26 20:51:06.405046"], ["password_digest", "$2a$10$L6h7/iuIdbWOItjrYuH79uDAwGGdjnbhgVKlHzue1dSZZ7Up9WNky"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-32@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Miss Kaley Turcotte"], ["email", "example-32@corgimingle.org"], ["created_at", "2017-05-26 20:51:06.469894"], ["updated_at", "2017-05-26 20:51:06.469894"], ["password_digest", "$2a$10$5AVI/.QfaK/mYeXqjs4b3eeVevk5VGnzflVcDHLe0apabrd202Flq"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-33@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Abraham Jast"], ["email", "example-33@corgimingle.org"], ["created_at", "2017-05-26 20:51:06.537089"], ["updated_at", "2017-05-26 20:51:06.537089"], ["password_digest", "$2a$10$gF0ml7gzOAO7wKip5y45.Ob1GsoR.S83.gxonpm/.wHY38en9o3Am"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-34@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Otis Morissette"], ["email", "example-34@corgimingle.org"], ["created_at", "2017-05-26 20:51:06.603053"], ["updated_at", "2017-05-26 20:51:06.603053"], ["password_digest", "$2a$10$7/AwIjgOncDp4apn16EZLuyNF37QDqvaLCzhjzYPFAjczpCO1LCeW"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-35@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Braeden Jaskolski"], ["email", "example-35@corgimingle.org"], ["created_at", "2017-05-26 20:51:06.667401"], ["updated_at", "2017-05-26 20:51:06.667401"], ["password_digest", "$2a$10$t0qjmrBhd78/n4y2XH.XsOMGIQoW70gP7ZYwPDv0hZxizkv4eQGSS"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-36@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Alaina Ryan"], ["email", "example-36@corgimingle.org"], ["created_at", "2017-05-26 20:51:06.737219"], ["updated_at", "2017-05-26 20:51:06.737219"], ["password_digest", "$2a$10$HjgDDmckx1frhE5By31SUOWh76vchquF6286cmTKYJgpj9/yugsai"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-37@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ms. Jonathon Stoltenberg"], ["email", "example-37@corgimingle.org"], ["created_at", "2017-05-26 20:51:06.802676"], ["updated_at", "2017-05-26 20:51:06.802676"], ["password_digest", "$2a$10$2thIVnWjdBpQboQznKxNE.oFUJyQybU8aB32ESYw9Vgd3kCNJyLGe"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-38@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mr. Lizzie Hegmann"], ["email", "example-38@corgimingle.org"], ["created_at", "2017-05-26 20:51:06.869184"], ["updated_at", "2017-05-26 20:51:06.869184"], ["password_digest", "$2a$10$6p9KcvuWHeN/6dYXXlM6/eVDc7XnEK/O1w/ZodMNPaEm04jgVLglW"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-39@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Alphonso Turner"], ["email", "example-39@corgimingle.org"], ["created_at", "2017-05-26 20:51:06.932938"], ["updated_at", "2017-05-26 20:51:06.932938"], ["password_digest", "$2a$10$e1gTAvWZ6kWQN1yRhZKF2ezfkQeS1NjLjLwdxdOxbbJhsSRrLaEdq"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-40@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Elias Adams Sr."], ["email", "example-40@corgimingle.org"], ["created_at", "2017-05-26 20:51:06.997176"], ["updated_at", "2017-05-26 20:51:06.997176"], ["password_digest", "$2a$10$/aYwVmuPZ8GKxykM2pEKGOn7olxMlDXXjz8Vovw7NJ/IRXb4IonCS"]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-41@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Yadira Wolf"], ["email", "example-41@corgimingle.org"], ["created_at", "2017-05-26 20:51:07.067796"], ["updated_at", "2017-05-26 20:51:07.067796"], ["password_digest", "$2a$10$4GJqn808PfPJ0VVlc9Z1Ru/t.wbTxx3H/fmcfmPGreuw1GCbxT01e"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-42@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Braulio Nienow III"], ["email", "example-42@corgimingle.org"], ["created_at", "2017-05-26 20:51:07.135851"], ["updated_at", "2017-05-26 20:51:07.135851"], ["password_digest", "$2a$10$GctuA4wdFmFbr5kd4svYMeaBdfnREaQgRumQsemaHEcC8EEdIpDvu"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-43@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Maurice Schmitt"], ["email", "example-43@corgimingle.org"], ["created_at", "2017-05-26 20:51:07.200617"], ["updated_at", "2017-05-26 20:51:07.200617"], ["password_digest", "$2a$10$vtoqLyY4jdVA7cEAuJ1wNuAz7.nREzR1kvXYSL0d/2hcBVBmzT.eG"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-44@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ole Funk"], ["email", "example-44@corgimingle.org"], ["created_at", "2017-05-26 20:51:07.269390"], ["updated_at", "2017-05-26 20:51:07.269390"], ["password_digest", "$2a$10$U0e2tuE.0dhdx.rTZjyQIenFI66F0/bx8tzw0yImjFP41UFrR/EbC"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-45@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ms. Queen O'Connell"], ["email", "example-45@corgimingle.org"], ["created_at", "2017-05-26 20:51:07.332207"], ["updated_at", "2017-05-26 20:51:07.332207"], ["password_digest", "$2a$10$mDM8uBgy14.G2TCsbATn9Oq/QLEgHgC1gttN14EJ.MHsKvjUdwCue"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-46@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Matilde Muller Sr."], ["email", "example-46@corgimingle.org"], ["created_at", "2017-05-26 20:51:07.395720"], ["updated_at", "2017-05-26 20:51:07.395720"], ["password_digest", "$2a$10$dkrDCM66T83ex0W1HF/4IuCEHxMLIa2nJ9eE7JAd.w0llIc1WCl9."]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-47@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Giovanny Labadie"], ["email", "example-47@corgimingle.org"], ["created_at", "2017-05-26 20:51:07.462359"], ["updated_at", "2017-05-26 20:51:07.462359"], ["password_digest", "$2a$10$RKTFdlnPdqVLQJsJ.h7cMuoru1LYEH9YX2vPI3eiF2GFY7mtse9hC"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-48@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Maymie Kutch"], ["email", "example-48@corgimingle.org"], ["created_at", "2017-05-26 20:51:07.528817"], ["updated_at", "2017-05-26 20:51:07.528817"], ["password_digest", "$2a$10$B3RW6nH3pPoK6ZmTaYORa.TIwkXcWCssGq530zBBJAbBwCEqfDK9C"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-49@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Miss Viva Beatty"], ["email", "example-49@corgimingle.org"], ["created_at", "2017-05-26 20:51:07.595956"], ["updated_at", "2017-05-26 20:51:07.595956"], ["password_digest", "$2a$10$Vx24nnQoDD464esizDw2GOkO72yVS2hbjcWBSRwFTcFYEn7QTfgEm"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-50@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Waldo Konopelski"], ["email", "example-50@corgimingle.org"], ["created_at", "2017-05-26 20:51:07.669396"], ["updated_at", "2017-05-26 20:51:07.669396"], ["password_digest", "$2a$10$gAc1CPZ99nlJWswwKHZ1Pef1Qfkz4oo1eHvm22/vT009lKPFxflk2"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-51@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Geovany Bradtke"], ["email", "example-51@corgimingle.org"], ["created_at", "2017-05-26 20:51:07.733819"], ["updated_at", "2017-05-26 20:51:07.733819"], ["password_digest", "$2a$10$Js5H37rNpR8c5cTSJipSCekNSqtHQ7KyaefidEFQEBrvVXBiFleka"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-52@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ressie Sporer DVM"], ["email", "example-52@corgimingle.org"], ["created_at", "2017-05-26 20:51:07.800149"], ["updated_at", "2017-05-26 20:51:07.800149"], ["password_digest", "$2a$10$QVwjrE.y8uMoivVstv59gujsEfesRE2kVH5qjRsrTimkCOv3gGzda"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-53@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tobin O'Reilly"], ["email", "example-53@corgimingle.org"], ["created_at", "2017-05-26 20:51:07.868355"], ["updated_at", "2017-05-26 20:51:07.868355"], ["password_digest", "$2a$10$AdAHsSzHI3J/P0e12jfiCuYIkbvcIJnnO8L8ludPkND6G.pp60Hhq"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-54@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tatum Bosco"], ["email", "example-54@corgimingle.org"], ["created_at", "2017-05-26 20:51:07.932775"], ["updated_at", "2017-05-26 20:51:07.932775"], ["password_digest", "$2a$10$Fph4U42F8QBdoqfuwgfe3uo8qMLPdvCOZ2Mfc9lq1UCbYj3rEqc6O"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-55@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Timothy Bins"], ["email", "example-55@corgimingle.org"], ["created_at", "2017-05-26 20:51:07.998176"], ["updated_at", "2017-05-26 20:51:07.998176"], ["password_digest", "$2a$10$xMfGqkN/2gnthB.zKMeUOuZ45tI25ba3hpvK3JBYB.1scjHt0ILCe"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-56@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Miss Jermain Wuckert"], ["email", "example-56@corgimingle.org"], ["created_at", "2017-05-26 20:51:08.064374"], ["updated_at", "2017-05-26 20:51:08.064374"], ["password_digest", "$2a$10$2lCMUPsGJ1g4v8JWDzJXtu9FN.mFUeP1o/v0PWu.RfzPhfdhO1xmK"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-57@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lilyan Schiller"], ["email", "example-57@corgimingle.org"], ["created_at", "2017-05-26 20:51:08.130774"], ["updated_at", "2017-05-26 20:51:08.130774"], ["password_digest", "$2a$10$Jm6AclkQvzYcIbwuqeCMr.PVHT8Q2/5zhEhYdP9dzAX/TiK33NzlS"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-58@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mr. Dion Weissnat"], ["email", "example-58@corgimingle.org"], ["created_at", "2017-05-26 20:51:08.195584"], ["updated_at", "2017-05-26 20:51:08.195584"], ["password_digest", "$2a$10$V/laQuzo/jq44VTF20eZXuJIKPwdIACWyF8I8eOiyRDULAYrCej.2"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-59@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lela Bernier"], ["email", "example-59@corgimingle.org"], ["created_at", "2017-05-26 20:51:08.259800"], ["updated_at", "2017-05-26 20:51:08.259800"], ["password_digest", "$2a$10$sLHUEuCulNJ9Z9j9kezfz.GVU.kt4YF28ikyCrLLn2O8y0ZtX07em"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-60@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Caitlyn Kshlerin"], ["email", "example-60@corgimingle.org"], ["created_at", "2017-05-26 20:51:08.327577"], ["updated_at", "2017-05-26 20:51:08.327577"], ["password_digest", "$2a$10$t2uAsX7meipE51yhz0yNyOjtZCQj/kh5bgNokDJpNjtTOlM.fazMe"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-61@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Miss Lexie Graham"], ["email", "example-61@corgimingle.org"], ["created_at", "2017-05-26 20:51:08.391838"], ["updated_at", "2017-05-26 20:51:08.391838"], ["password_digest", "$2a$10$hbcfTou4A5O3.ZA.AkbBAOTu5Pe7T7RVtfnqEn1SYDKWwdNPZot6e"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-62@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Hattie Cartwright"], ["email", "example-62@corgimingle.org"], ["created_at", "2017-05-26 20:51:08.457027"], ["updated_at", "2017-05-26 20:51:08.457027"], ["password_digest", "$2a$10$hqj5ZYUW0YO.IZUf4BJbOOZZT9sxZqWc/cZs2LjAKLSABCpo1vFiK"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-63@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Chandler Wilkinson V"], ["email", "example-63@corgimingle.org"], ["created_at", "2017-05-26 20:51:08.520220"], ["updated_at", "2017-05-26 20:51:08.520220"], ["password_digest", "$2a$10$J3AHXRteK2UhmnOkHT9LD.gYgyN2MOcHS44IFwKiitu8/l8pMcUKy"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-64@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ursula Pollich"], ["email", "example-64@corgimingle.org"], ["created_at", "2017-05-26 20:51:08.589690"], ["updated_at", "2017-05-26 20:51:08.589690"], ["password_digest", "$2a$10$.7AokYiMxSaWEB.obU7U9uBEoIDk48bEh15Nu7HTHvbAsoki.Ye76"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-65@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Alessia Armstrong"], ["email", "example-65@corgimingle.org"], ["created_at", "2017-05-26 20:51:08.659148"], ["updated_at", "2017-05-26 20:51:08.659148"], ["password_digest", "$2a$10$8eSwLgcMw3.m0VRkwtQO.eldX6ObZ0LieAXmEh1aWHnQ1pz7Oy6a."]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-66@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Amy Douglas"], ["email", "example-66@corgimingle.org"], ["created_at", "2017-05-26 20:51:08.726832"], ["updated_at", "2017-05-26 20:51:08.726832"], ["password_digest", "$2a$10$z296KpyNrFfcT/cab8TZ2OeWFh43L92lHwhnlkDntcCJ1A7IP3E0."]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-67@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Caesar Kohler"], ["email", "example-67@corgimingle.org"], ["created_at", "2017-05-26 20:51:08.791699"], ["updated_at", "2017-05-26 20:51:08.791699"], ["password_digest", "$2a$10$HnWG1wcgKGnHHRSHLptKTOpgOkDMz09BId34phpk91zgRpWVfhrXK"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-68@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jeffery Deckow"], ["email", "example-68@corgimingle.org"], ["created_at", "2017-05-26 20:51:08.857448"], ["updated_at", "2017-05-26 20:51:08.857448"], ["password_digest", "$2a$10$AkBTcjxVGao9EkXvpG4TyOzBwBRSucTrbRc87Wa5Zkcm1MdAA.Pty"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-69@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ms. Brooklyn Ullrich"], ["email", "example-69@corgimingle.org"], ["created_at", "2017-05-26 20:51:08.921225"], ["updated_at", "2017-05-26 20:51:08.921225"], ["password_digest", "$2a$10$R.kta360WRnyzBBpRcRSGesY178j0dZj5lD.rBLFc5MHQUJnFGMwS"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-70@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Oswald Abshire"], ["email", "example-70@corgimingle.org"], ["created_at", "2017-05-26 20:51:08.989030"], ["updated_at", "2017-05-26 20:51:08.989030"], ["password_digest", "$2a$10$NKJ0hicxwJfPi9JsPi1mteJg422LjaQDEE5aHXvOY5wBD9VZ5lrRa"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-71@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Nyasia Marquardt"], ["email", "example-71@corgimingle.org"], ["created_at", "2017-05-26 20:51:09.052710"], ["updated_at", "2017-05-26 20:51:09.052710"], ["password_digest", "$2a$10$QgsVGseycCcplcYIfUrQF.AfJId8Jt65E5oMWa51OfVc1F2XkGUVa"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-72@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Victoria Watsica"], ["email", "example-72@corgimingle.org"], ["created_at", "2017-05-26 20:51:09.118957"], ["updated_at", "2017-05-26 20:51:09.118957"], ["password_digest", "$2a$10$6Kl6MFoTmTvReeTgJw1kaemBxhQ0wipVnu60HSlg9mo..68fgkqqq"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-73@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Chadd Kemmer"], ["email", "example-73@corgimingle.org"], ["created_at", "2017-05-26 20:51:09.184095"], ["updated_at", "2017-05-26 20:51:09.184095"], ["password_digest", "$2a$10$uchigutCUAcDKZZRfC2EX.az2ZmOF/O70RuvJOg7rT8lJHdyM7pcS"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-74@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Perry McCullough"], ["email", "example-74@corgimingle.org"], ["created_at", "2017-05-26 20:51:09.251891"], ["updated_at", "2017-05-26 20:51:09.251891"], ["password_digest", "$2a$10$cfu.77ZSDPNTplchoGxmJuf0TFAGwWZ.wfQNhASDKlw7p1SUqZrUm"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-75@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Larue Baumbach"], ["email", "example-75@corgimingle.org"], ["created_at", "2017-05-26 20:51:09.316502"], ["updated_at", "2017-05-26 20:51:09.316502"], ["password_digest", "$2a$10$JjuO5mXahzQdT6oyecAIR.7q9w/BOoEq4gGHeQIqQaRBEmPEkYaWG"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-76@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mr. Norbert Kautzer"], ["email", "example-76@corgimingle.org"], ["created_at", "2017-05-26 20:51:09.381554"], ["updated_at", "2017-05-26 20:51:09.381554"], ["password_digest", "$2a$10$tof51cOr.BNLzkbx9.9HLOTsZdhhvAOzEfB1tr3hpojuC9sJo8ucq"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-77@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jamar Nicolas"], ["email", "example-77@corgimingle.org"], ["created_at", "2017-05-26 20:51:09.445535"], ["updated_at", "2017-05-26 20:51:09.445535"], ["password_digest", "$2a$10$FIxa9BCW75XQCZiq6HgjHOLSkZ2Cebn6VO0Q/G5ZeUHh97Z81A1lS"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-78@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Domenic Dicki MD"], ["email", "example-78@corgimingle.org"], ["created_at", "2017-05-26 20:51:09.515192"], ["updated_at", "2017-05-26 20:51:09.515192"], ["password_digest", "$2a$10$zfsBH.KabgR8c4v1YQCP4e.4r4jKbUcO5dI3FArK1RTBqBbZq9ana"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-79@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jean Paucek"], ["email", "example-79@corgimingle.org"], ["created_at", "2017-05-26 20:51:09.579008"], ["updated_at", "2017-05-26 20:51:09.579008"], ["password_digest", "$2a$10$PShcc1.WpJy23GSreC.ETewDvRkYKnuyfPzYBRT1oIXG0f.07z6x6"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-80@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aurelie Monahan"], ["email", "example-80@corgimingle.org"], ["created_at", "2017-05-26 20:51:09.647750"], ["updated_at", "2017-05-26 20:51:09.647750"], ["password_digest", "$2a$10$GB9ElBV0gY10h2FiBYgTN.8kvdlEGTHsIlrkekcDGsm16gAdU.yiG"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-81@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Elvis Lowe"], ["email", "example-81@corgimingle.org"], ["created_at", "2017-05-26 20:51:09.716995"], ["updated_at", "2017-05-26 20:51:09.716995"], ["password_digest", "$2a$10$algbxmLNpYByszgTSyCKUOKNXBJ/qNpHjA9RHmXSZiy12cTAHpm4y"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-82@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mr. Richmond Haley"], ["email", "example-82@corgimingle.org"], ["created_at", "2017-05-26 20:51:09.783668"], ["updated_at", "2017-05-26 20:51:09.783668"], ["password_digest", "$2a$10$cLu8DqDPT3dFmzxVwcdBQuj9LYyW31pF7W2PAGx4jOx6BF6cQvVzy"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-83@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Miss Dora Bartoletti"], ["email", "example-83@corgimingle.org"], ["created_at", "2017-05-26 20:51:09.850825"], ["updated_at", "2017-05-26 20:51:09.850825"], ["password_digest", "$2a$10$AyBhUG0A60R6mP7VJUtPLexBrp77gAU1JvMzX9.IehQocVW8Nrb5a"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-84@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Krystel Feeney DDS"], ["email", "example-84@corgimingle.org"], ["created_at", "2017-05-26 20:51:09.917740"], ["updated_at", "2017-05-26 20:51:09.917740"], ["password_digest", "$2a$10$TYM0xTZNE8LbvmOPHvoWGe.DQaD3NJMIt651RKJsIhpd8B11WDIcy"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-85@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Kiara Franecki"], ["email", "example-85@corgimingle.org"], ["created_at", "2017-05-26 20:51:09.983706"], ["updated_at", "2017-05-26 20:51:09.983706"], ["password_digest", "$2a$10$cI83r.e/ynboJmGtkUhNtukljVLh/ojOSnZKpljK62vx0InWzbZSC"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-86@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dr. Rudolph Schimmel"], ["email", "example-86@corgimingle.org"], ["created_at", "2017-05-26 20:51:10.055430"], ["updated_at", "2017-05-26 20:51:10.055430"], ["password_digest", "$2a$10$LIt/rUIDkMUkG0hngpzfNuo2/leDeIIVUlgi7r..IH/Fy2x2OA4tu"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-87@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mr. Russel Carroll"], ["email", "example-87@corgimingle.org"], ["created_at", "2017-05-26 20:51:10.120024"], ["updated_at", "2017-05-26 20:51:10.120024"], ["password_digest", "$2a$10$V.1p8ACPQO3OZ4CRHayrRuj/j3estXr2Ybu/ZQ/TW24u9YwNKlF2q"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-88@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Evalyn Franecki II"], ["email", "example-88@corgimingle.org"], ["created_at", "2017-05-26 20:51:10.186686"], ["updated_at", "2017-05-26 20:51:10.186686"], ["password_digest", "$2a$10$AMixSwR7sOjZY3ZCCnTy8e8pBthAnsGZxUahu4uZHQP3n29AwHekC"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-89@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aric Trantow"], ["email", "example-89@corgimingle.org"], ["created_at", "2017-05-26 20:51:10.252865"], ["updated_at", "2017-05-26 20:51:10.252865"], ["password_digest", "$2a$10$H/ekfWsLc0TPKk8kdjJWTuWPaLKV1bNeJZPwTeB7A.U1D6LXLLX.C"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-90@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mr. Lilian O'Reilly"], ["email", "example-90@corgimingle.org"], ["created_at", "2017-05-26 20:51:10.319604"], ["updated_at", "2017-05-26 20:51:10.319604"], ["password_digest", "$2a$10$qaHegx6w42K3ZvRMmYQlyuRNMgdwDRH7mxxPta/f5ctBZjCCXW8aa"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-91@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Deon Gleason PhD"], ["email", "example-91@corgimingle.org"], ["created_at", "2017-05-26 20:51:10.385165"], ["updated_at", "2017-05-26 20:51:10.385165"], ["password_digest", "$2a$10$57iI2rtapguDvBfvjWrAheIeHUW91HJu8Owvt7IyQOlC/xpGsaJl."]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-92@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Taryn Quigley"], ["email", "example-92@corgimingle.org"], ["created_at", "2017-05-26 20:51:10.454732"], ["updated_at", "2017-05-26 20:51:10.454732"], ["password_digest", "$2a$10$z/C1pF4C6NUoN0h71R2V4.WwF.T9Tf37tLpMB9nHmrduTX1lF4q3a"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-93@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Desiree Bahringer II"], ["email", "example-93@corgimingle.org"], ["created_at", "2017-05-26 20:51:10.521199"], ["updated_at", "2017-05-26 20:51:10.521199"], ["password_digest", "$2a$10$/xJWP8VS2YD4fRdBf/TsPehFd4HwTQmTCTIHiZrPYbTRqBlFA5K16"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-94@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Monserrate Ferry"], ["email", "example-94@corgimingle.org"], ["created_at", "2017-05-26 20:51:10.585705"], ["updated_at", "2017-05-26 20:51:10.585705"], ["password_digest", "$2a$10$ikOE2bzyLsq3zTauqKCdM.u6dcca2RMJ/8BZlGq4RTmzd1gUucURa"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-95@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Gino Bradtke III"], ["email", "example-95@corgimingle.org"], ["created_at", "2017-05-26 20:51:10.650440"], ["updated_at", "2017-05-26 20:51:10.650440"], ["password_digest", "$2a$10$prC4hYVIuNmLOijgogjiG.NdL6Gn6..NdV8NQuqINQEX5OjhVC8P."]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-96@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lulu Wilkinson"], ["email", "example-96@corgimingle.org"], ["created_at", "2017-05-26 20:51:10.719725"], ["updated_at", "2017-05-26 20:51:10.719725"], ["password_digest", "$2a$10$bCQ4xnWWvhZ/5fO7zcPuJOTITirNe28BqfQ7KZgHszIkMcWSjzLn6"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-97@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Samantha Swaniawski"], ["email", "example-97@corgimingle.org"], ["created_at", "2017-05-26 20:51:10.792613"], ["updated_at", "2017-05-26 20:51:10.792613"], ["password_digest", "$2a$10$zXY2Oaeh.LwfMjtZlDA85O07J.faZBU/SeTtqFCtBdcInfrDRjovq"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-98@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Rita Carroll"], ["email", "example-98@corgimingle.org"], ["created_at", "2017-05-26 20:51:10.858091"], ["updated_at", "2017-05-26 20:51:10.858091"], ["password_digest", "$2a$10$QT00TkHLKuDRD7eGcvn0resU.WyNjLHlvttsmnKLFdjOn0cytz/tW"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-99@corgimingle.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dr. Don Nienow"], ["email", "example-99@corgimingle.org"], ["created_at", "2017-05-26 20:51:10.925405"], ["updated_at", "2017-05-26 20:51:10.925405"], ["password_digest", "$2a$10$jm.fwmL9LEEhfGvXa/NyKupNv/e5a5l0Ac0AB36ZTcwebCZtls7Hy"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2017-05-26 13:51:39 -0700
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_rails_default.html.erb (27.0ms) [cache miss]
+  Rendered layouts/_shim.html.erb (0.4ms) [cache miss]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (16.4ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 57ms (Views: 55.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-05-26 13:51:41 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (21.5ms)
+  Rendered layouts/_rails_default.html.erb (27.3ms) [cache miss]
+  Rendered layouts/_shim.html.erb (0.3ms) [cache miss]
+  Rendered layouts/_header.html.erb (1.0ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 68ms (Views: 61.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-05-26 13:54:44 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `paginate' for #<Class:0x007f8a2b9f4f68>):
+  
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/" for 127.0.0.1 at 2017-05-26 13:55:10 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (174.5ms)
+  Rendered layouts/_rails_default.html.erb (77.8ms) [cache miss]
+  Rendered layouts/_shim.html.erb (0.4ms) [cache miss]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (27.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (1.2ms) [cache miss]
+Completed 200 OK in 307ms (Views: 297.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-05-26 13:55:12 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered users/index.html.erb within layouts/application (364.0ms)
+  Rendered layouts/_rails_default.html.erb (25.7ms) [cache miss]
+  Rendered layouts/_shim.html.erb (0.3ms) [cache miss]
+  Rendered layouts/_header.html.erb (1.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 411ms (Views: 404.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users?page=2" for 127.0.0.1 at 2017-05-26 13:55:18 -0700
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 30]]
+  Rendered users/index.html.erb within layouts/application (12.7ms)
+  Rendered layouts/_rails_default.html.erb (29.9ms) [cache miss]
+  Rendered layouts/_shim.html.erb (0.4ms) [cache miss]
+  Rendered layouts/_header.html.erb (1.0ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 58ms (Views: 53.8ms | ActiveRecord: 0.8ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAdminToUsers (20170526210054)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170526210054"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "admin" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2017-05-26 21:02:12.906312"], ["admin", "t"], ["id", 1]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20170524012227)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170524012227"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexToUsersEmail (20170524020835)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170524020835"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordDigestToUsers (20170524021808)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170524021808"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddRememberDigestToUsers (20170525215518)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_digest" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170525215518"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAdminToUsers (20170526210054)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170526210054"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-05-26 21:03:33.601196"], ["updated_at", "2017-05-26 21:03:33.601196"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "yyue@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "admin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Summer Yue"], ["email", "yyue@corgimingle.com"], ["created_at", "2017-05-26 21:03:39.233018"], ["updated_at", "2017-05-26 21:03:39.233018"], ["password_digest", "$2a$10$oEJv8LHl9fRTY86nS8sDl.1yVyxhFj5Ix1luUKl3MmYMDOCFUcBei"], ["admin", "t"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-1@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Erin Monahan"], ["email", "example-1@corgimingle.com"], ["created_at", "2017-05-26 21:03:39.589408"], ["updated_at", "2017-05-26 21:03:39.589408"], ["password_digest", "$2a$10$Pbo5SjhE43YNN14ltjP.UuRK8nkSafhE2ssN/qQCfoYhsCxjw6HwK"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-2@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ms. Unique Jast"], ["email", "example-2@corgimingle.com"], ["created_at", "2017-05-26 21:03:39.653564"], ["updated_at", "2017-05-26 21:03:39.653564"], ["password_digest", "$2a$10$KPKisIduQCuWt.PDMcL8tO/dfPZ64lEeiKmDdLyLxU..7FlEI8/w6"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-3@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Delia Dibbert"], ["email", "example-3@corgimingle.com"], ["created_at", "2017-05-26 21:03:39.717192"], ["updated_at", "2017-05-26 21:03:39.717192"], ["password_digest", "$2a$10$DhAS8vZ5gusUWO.1YiepueyQXSpKxghGhtaURovhcuCr0Kf6IYdmm"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-4@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Nikki Tillman MD"], ["email", "example-4@corgimingle.com"], ["created_at", "2017-05-26 21:03:39.782521"], ["updated_at", "2017-05-26 21:03:39.782521"], ["password_digest", "$2a$10$FE2QE3Sl64SRYqz1l0seO.D3S.h2ZyGn7B4Umn7upJuTspixmiCU2"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-5@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Shayna Bashirian"], ["email", "example-5@corgimingle.com"], ["created_at", "2017-05-26 21:03:39.845819"], ["updated_at", "2017-05-26 21:03:39.845819"], ["password_digest", "$2a$10$JMuc4cGxbmHjWkB40zA7kuL9y7sDdIQExgzPuXQP/gOqlI0XaCoAG"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-6@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Hazle Kulas"], ["email", "example-6@corgimingle.com"], ["created_at", "2017-05-26 21:03:39.912519"], ["updated_at", "2017-05-26 21:03:39.912519"], ["password_digest", "$2a$10$JMyVy83O2T0O9Tkg0f5RzeJvjJ0/s7noIfiROYNHRNsEhdcBKlf/6"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-7@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Karelle Barrows PhD"], ["email", "example-7@corgimingle.com"], ["created_at", "2017-05-26 21:03:39.977347"], ["updated_at", "2017-05-26 21:03:39.977347"], ["password_digest", "$2a$10$QhH/uJ6Gt4I90lA/D.ibf.9AaWWoBevmPkuqit4jYxZw19vTMGiEu"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-8@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ahmed Parker II"], ["email", "example-8@corgimingle.com"], ["created_at", "2017-05-26 21:03:40.040679"], ["updated_at", "2017-05-26 21:03:40.040679"], ["password_digest", "$2a$10$GL1jbKMtUvWFyngocaKKauaPk26qHzSCdZD3j4yBdjhsba5GlllCS"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-9@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tiana Watsica"], ["email", "example-9@corgimingle.com"], ["created_at", "2017-05-26 21:03:40.109732"], ["updated_at", "2017-05-26 21:03:40.109732"], ["password_digest", "$2a$10$GbTw1BuDmvYIcJ.YhwLlQObUCeGukqlAyPHk2i67GwfsjjmzThr5S"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-10@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Miss Madie Bruen"], ["email", "example-10@corgimingle.com"], ["created_at", "2017-05-26 21:03:40.172025"], ["updated_at", "2017-05-26 21:03:40.172025"], ["password_digest", "$2a$10$w1gqsLaVlSiscWaUzKIZEObhcC/5SuKgoViCjci/LRWtXOznBMl56"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-11@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Astrid Nikolaus"], ["email", "example-11@corgimingle.com"], ["created_at", "2017-05-26 21:03:40.236113"], ["updated_at", "2017-05-26 21:03:40.236113"], ["password_digest", "$2a$10$H8VJ4ruRnX5xDkcFX.djausPQ2b72.olO3CN7lDuGlyF9yvbq3Zxi"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-12@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Oceane Lind"], ["email", "example-12@corgimingle.com"], ["created_at", "2017-05-26 21:03:40.301733"], ["updated_at", "2017-05-26 21:03:40.301733"], ["password_digest", "$2a$10$59Jw3ACN5bfXugQobWvHL.xvky6vNCfuaYUCT7wDMVWwbkjpVV6SW"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-13@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Kassandra Rau"], ["email", "example-13@corgimingle.com"], ["created_at", "2017-05-26 21:03:40.368078"], ["updated_at", "2017-05-26 21:03:40.368078"], ["password_digest", "$2a$10$QgNDReC6CTP1LhA7xSfoGeq8ddEJpGCj5/UJpuHNJmQbk9XQTrj56"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-14@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Berniece Murazik"], ["email", "example-14@corgimingle.com"], ["created_at", "2017-05-26 21:03:40.431661"], ["updated_at", "2017-05-26 21:03:40.431661"], ["password_digest", "$2a$10$YtaM0sZjnxhEX/2PZmojtO5usu2GxI9JsUXsWqvY/blrUEd1oywGC"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-15@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Alycia Ziemann II"], ["email", "example-15@corgimingle.com"], ["created_at", "2017-05-26 21:03:40.500663"], ["updated_at", "2017-05-26 21:03:40.500663"], ["password_digest", "$2a$10$zPREV.ezyUwqHm1MhS71FuCxbjX2fXa1h/vV4zrNq2FxfhAi5gQOS"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-16@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dr. Reyna Bashirian"], ["email", "example-16@corgimingle.com"], ["created_at", "2017-05-26 21:03:40.572622"], ["updated_at", "2017-05-26 21:03:40.572622"], ["password_digest", "$2a$10$ScZZdce0HKxHyzHj.Y9OXOYUpayGMm.hWXFCUwq5rnxp5cWh1u6JG"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-17@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Carley Schulist"], ["email", "example-17@corgimingle.com"], ["created_at", "2017-05-26 21:03:40.640358"], ["updated_at", "2017-05-26 21:03:40.640358"], ["password_digest", "$2a$10$toxwgbOlSfv69PSRZEthCeNlGMUf1okZAXF7PXiNC2STOeWQu0nDO"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-18@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Blake Tremblay PhD"], ["email", "example-18@corgimingle.com"], ["created_at", "2017-05-26 21:03:40.703679"], ["updated_at", "2017-05-26 21:03:40.703679"], ["password_digest", "$2a$10$uE4pdPUZEnGYfdMYHVDKzOBDmiYe9fvoZAdP8jwvQJETftLV3OCFq"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-19@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tanner Crist"], ["email", "example-19@corgimingle.com"], ["created_at", "2017-05-26 21:03:40.768806"], ["updated_at", "2017-05-26 21:03:40.768806"], ["password_digest", "$2a$10$vedglpXsV36Rd3HjuNy9ZOrquszR6DmR94Xx7KvlmFenXvCh9rHyy"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-20@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Stephan Roberts"], ["email", "example-20@corgimingle.com"], ["created_at", "2017-05-26 21:03:40.832311"], ["updated_at", "2017-05-26 21:03:40.832311"], ["password_digest", "$2a$10$oSZPRTBfexNli0Y6D.PnZOGShUaMMLxuEMWDUVB0d3EpDjLu7DIlK"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-21@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Alexa Walker"], ["email", "example-21@corgimingle.com"], ["created_at", "2017-05-26 21:03:40.898433"], ["updated_at", "2017-05-26 21:03:40.898433"], ["password_digest", "$2a$10$8zWhOQLFh39.ZmydNSQcDO3RoljPBdYIyvfHRdSYmXAMmHDnLXFUG"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-22@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Noemie Batz"], ["email", "example-22@corgimingle.com"], ["created_at", "2017-05-26 21:03:40.962117"], ["updated_at", "2017-05-26 21:03:40.962117"], ["password_digest", "$2a$10$PqEtYfxJRVmKgYUBrUOrjeruPOs6jH9kojdsanIEfOW2.A3kl9Kc2"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-23@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Curt Fisher"], ["email", "example-23@corgimingle.com"], ["created_at", "2017-05-26 21:03:41.029838"], ["updated_at", "2017-05-26 21:03:41.029838"], ["password_digest", "$2a$10$9zXoOkk4gBQAl/tbJY9/aODwzZJc.O3FdXKTFY3WmNChPtFwrEfCq"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-24@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ralph Hoppe"], ["email", "example-24@corgimingle.com"], ["created_at", "2017-05-26 21:03:41.097094"], ["updated_at", "2017-05-26 21:03:41.097094"], ["password_digest", "$2a$10$ugr3BDygeKbpPWJq.VizueIL/CvrxyTF4TXYwAA6SAcSQcER7QnLa"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-25@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mr. Ted Yundt"], ["email", "example-25@corgimingle.com"], ["created_at", "2017-05-26 21:03:41.159508"], ["updated_at", "2017-05-26 21:03:41.159508"], ["password_digest", "$2a$10$13iZNvwkp2KvXNzqb6JzG.O6PTdAlzJ9tEOb.Hs43Gj5I.Zv7cIfm"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-26@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ella Hane"], ["email", "example-26@corgimingle.com"], ["created_at", "2017-05-26 21:03:41.224499"], ["updated_at", "2017-05-26 21:03:41.224499"], ["password_digest", "$2a$10$Fa.QML9aGScdsvvvG6JX6O.Gofy9Q1gxcPGkUiVWm/I3x.wKwdwsu"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-27@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Maurine Johns"], ["email", "example-27@corgimingle.com"], ["created_at", "2017-05-26 21:03:41.293176"], ["updated_at", "2017-05-26 21:03:41.293176"], ["password_digest", "$2a$10$OTmizbCjHnKi7tVPd47Zf.15nI8gFhfRlQ39N7EJnsKYfvV6sjci6"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-28@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Reed Kerluke"], ["email", "example-28@corgimingle.com"], ["created_at", "2017-05-26 21:03:41.356826"], ["updated_at", "2017-05-26 21:03:41.356826"], ["password_digest", "$2a$10$t4adR1mNip3LEixOVIt2fOTmbBHqdrM7taJO43F657R4FRdhM4e96"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-29@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Else Robel"], ["email", "example-29@corgimingle.com"], ["created_at", "2017-05-26 21:03:41.424081"], ["updated_at", "2017-05-26 21:03:41.424081"], ["password_digest", "$2a$10$GJxnKlpoU3kIaKyAGaYY5uxh3wU1HzFNm95VLX8rxl.DsJEbiDiLi"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-30@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Eusebio Schulist"], ["email", "example-30@corgimingle.com"], ["created_at", "2017-05-26 21:03:41.492337"], ["updated_at", "2017-05-26 21:03:41.492337"], ["password_digest", "$2a$10$C4uLY6MlUi6dsfa3uOKOKObGKVwFPtw4IIW0482n0ZijRN0qN2hoG"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-31@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Aric Schuppe"], ["email", "example-31@corgimingle.com"], ["created_at", "2017-05-26 21:03:41.556693"], ["updated_at", "2017-05-26 21:03:41.556693"], ["password_digest", "$2a$10$be2UWpnwd4BWBjAAitDOEeI/vBMyi1vmQvMTtRRMRx/Mz/rZFnGJG"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-32@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Hadley Olson"], ["email", "example-32@corgimingle.com"], ["created_at", "2017-05-26 21:03:41.627121"], ["updated_at", "2017-05-26 21:03:41.627121"], ["password_digest", "$2a$10$JhaG3cbbgvUx/lXShtx7kOo8P5IxQGdIjybIHNUXqdm651tEfe5x."]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-33@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mrs. Mable Grady"], ["email", "example-33@corgimingle.com"], ["created_at", "2017-05-26 21:03:41.693166"], ["updated_at", "2017-05-26 21:03:41.693166"], ["password_digest", "$2a$10$TjaeDt86KjMaGSalaX8VLOTmWMJb89Zr1iQtF34EjiavzwehZlY4a"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-34@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Norris Krajcik"], ["email", "example-34@corgimingle.com"], ["created_at", "2017-05-26 21:03:41.755773"], ["updated_at", "2017-05-26 21:03:41.755773"], ["password_digest", "$2a$10$5r4FySoFrGkFL7HZXPGep.0vZRLrPVX399Gxu9WNZIm2YVJDRbRia"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-35@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cielo Ondricka"], ["email", "example-35@corgimingle.com"], ["created_at", "2017-05-26 21:03:41.819748"], ["updated_at", "2017-05-26 21:03:41.819748"], ["password_digest", "$2a$10$11hXoIHRm/oKxSpfB.iyhOT0C4PLHTteAjFVbVdQDj82TeG3Ye/bi"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-36@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mr. Dean Hickle"], ["email", "example-36@corgimingle.com"], ["created_at", "2017-05-26 21:03:41.887886"], ["updated_at", "2017-05-26 21:03:41.887886"], ["password_digest", "$2a$10$8JYDVm93mnS4V2ipyDOj7OFO72uoCZtgZ694zYEhzGWTkVtD.41D."]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-37@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ronaldo Hartmann"], ["email", "example-37@corgimingle.com"], ["created_at", "2017-05-26 21:03:41.951804"], ["updated_at", "2017-05-26 21:03:41.951804"], ["password_digest", "$2a$10$jm2CA9JEbQLt/nGjGsWHNuEyQot6EBkyVxcsBt6YufVkdBlfJXZ4W"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-38@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Era Rohan"], ["email", "example-38@corgimingle.com"], ["created_at", "2017-05-26 21:03:42.016231"], ["updated_at", "2017-05-26 21:03:42.016231"], ["password_digest", "$2a$10$QYogcUBczD7V8mIF7dyX2ezRJQTB8/Win1sKXAmFS9tza8QsBTp9q"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-39@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Liliana Watsica IV"], ["email", "example-39@corgimingle.com"], ["created_at", "2017-05-26 21:03:42.083445"], ["updated_at", "2017-05-26 21:03:42.083445"], ["password_digest", "$2a$10$5i25OHHpI7zRL6DVLw2DeOvafCpgvHJwkEzefxQhc7yy8wnnLAhFG"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-40@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lonny Hane V"], ["email", "example-40@corgimingle.com"], ["created_at", "2017-05-26 21:03:42.147275"], ["updated_at", "2017-05-26 21:03:42.147275"], ["password_digest", "$2a$10$.XiXRjZEGqP7uvojJC8Up.MYZKHlslbVgpHxBWo0IcOwqCu/J6qHi"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-41@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Rocio Swaniawski"], ["email", "example-41@corgimingle.com"], ["created_at", "2017-05-26 21:03:42.216675"], ["updated_at", "2017-05-26 21:03:42.216675"], ["password_digest", "$2a$10$DwmmmQloB6mgQOKFQYCrUuKcOcR4B.B0/VVk2r8T5.FZl/Sp.u7Gu"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-42@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mrs. Wilber Witting"], ["email", "example-42@corgimingle.com"], ["created_at", "2017-05-26 21:03:42.280643"], ["updated_at", "2017-05-26 21:03:42.280643"], ["password_digest", "$2a$10$fh8FHthH/Yn8T8QcrwV2eOaa8h9k1D2nrHoyangl/fOe1dQY9rTsO"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-43@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Keyshawn Jast"], ["email", "example-43@corgimingle.com"], ["created_at", "2017-05-26 21:03:42.345074"], ["updated_at", "2017-05-26 21:03:42.345074"], ["password_digest", "$2a$10$fg90rcWfUe63.XSIju.YfOOZ6iaL8lx833ZYr1.iFcJASKiL/h3NS"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-44@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jonathon Nolan"], ["email", "example-44@corgimingle.com"], ["created_at", "2017-05-26 21:03:42.410785"], ["updated_at", "2017-05-26 21:03:42.410785"], ["password_digest", "$2a$10$d2iTS4zLGnL27K8FnwLvauEJQKutuyV.IVjCFuT46jK5g8yV5L2gO"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-45@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Amelie Waters"], ["email", "example-45@corgimingle.com"], ["created_at", "2017-05-26 21:03:42.474283"], ["updated_at", "2017-05-26 21:03:42.474283"], ["password_digest", "$2a$10$xg.DZF3IEC0ux87/4w3dyu0gk6ujemXXhZRZ24UjWgpLU9O7qbs7q"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-46@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sally Labadie"], ["email", "example-46@corgimingle.com"], ["created_at", "2017-05-26 21:03:42.538311"], ["updated_at", "2017-05-26 21:03:42.538311"], ["password_digest", "$2a$10$o1xvlMvQk.VhJmQ3EiWn4.MF5FsQEO8Tq/0hRjmAI.wGSdH6y8HzO"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-47@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sigmund Muller"], ["email", "example-47@corgimingle.com"], ["created_at", "2017-05-26 21:03:42.603491"], ["updated_at", "2017-05-26 21:03:42.603491"], ["password_digest", "$2a$10$RVGCDwG7SfPUiN.UdTRlBOEI0xicUalNvN5bHryNFR8uBNyDEf33O"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-48@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Miss Cristian Corwin"], ["email", "example-48@corgimingle.com"], ["created_at", "2017-05-26 21:03:42.670488"], ["updated_at", "2017-05-26 21:03:42.670488"], ["password_digest", "$2a$10$FmtTXxzR0ONeU9ka2WOLeOwdt5BIoW3a5VO/6LH1SkP.At4XJCTGK"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-49@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ms. Francesca Dietrich"], ["email", "example-49@corgimingle.com"], ["created_at", "2017-05-26 21:03:42.735757"], ["updated_at", "2017-05-26 21:03:42.735757"], ["password_digest", "$2a$10$HGkY7x5ohf12Vq/gC9VvoeXL19cOOydwt799h2bgf4gn2DPlNM4h6"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-50@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Francisca Koss"], ["email", "example-50@corgimingle.com"], ["created_at", "2017-05-26 21:03:42.800000"], ["updated_at", "2017-05-26 21:03:42.800000"], ["password_digest", "$2a$10$u798WlmesCqaAP82TolfeOW8YsO2rekshImqvT872Iw3t7ZOgnaay"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-51@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Kody Bergnaum"], ["email", "example-51@corgimingle.com"], ["created_at", "2017-05-26 21:03:42.865812"], ["updated_at", "2017-05-26 21:03:42.865812"], ["password_digest", "$2a$10$7zcZLlasuzDAWCcFqjmtlud1H4Y2XIZYcL4cYAd1X0nJFARMv6NYy"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-52@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Geo Beahan"], ["email", "example-52@corgimingle.com"], ["created_at", "2017-05-26 21:03:42.931150"], ["updated_at", "2017-05-26 21:03:42.931150"], ["password_digest", "$2a$10$6fzJokg4TKGrNLBEkl.ZhOltbVsIweyvCueOf75RVHPhxBw45l/02"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-53@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Eliezer Lindgren"], ["email", "example-53@corgimingle.com"], ["created_at", "2017-05-26 21:03:42.999959"], ["updated_at", "2017-05-26 21:03:42.999959"], ["password_digest", "$2a$10$AHgLwpIIDpSd4Am8qSdoJuK6RcLXZ9G0lrm0bhoYNoVao9wde.x5a"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-54@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ms. Deon Konopelski"], ["email", "example-54@corgimingle.com"], ["created_at", "2017-05-26 21:03:43.070111"], ["updated_at", "2017-05-26 21:03:43.070111"], ["password_digest", "$2a$10$vJqwMKbi1VNWL.2KMSZdzeGe44f1V4CxTMnsRm88cIBgL3Uvrqti6"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-55@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Maryse Gorczany"], ["email", "example-55@corgimingle.com"], ["created_at", "2017-05-26 21:03:43.136990"], ["updated_at", "2017-05-26 21:03:43.136990"], ["password_digest", "$2a$10$8S9YxrWLbSZneIKXG13DLufWqygW4QsQwKbVV067hbyXEXujwxNle"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-56@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ericka Bauch DDS"], ["email", "example-56@corgimingle.com"], ["created_at", "2017-05-26 21:03:43.199785"], ["updated_at", "2017-05-26 21:03:43.199785"], ["password_digest", "$2a$10$pLwxRu3nMtIajTGKBQ9BXeQINAP/XiqGU4RBHY6AevQC5hasMYpQa"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-57@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Granville Hessel"], ["email", "example-57@corgimingle.com"], ["created_at", "2017-05-26 21:03:43.262982"], ["updated_at", "2017-05-26 21:03:43.262982"], ["password_digest", "$2a$10$UVw4FWBJTPXrpbUVrXfd4.TEcltoxWYGSHG6vJWA2wmnCGq.L7NmC"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-58@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jovan Emmerich"], ["email", "example-58@corgimingle.com"], ["created_at", "2017-05-26 21:03:43.327896"], ["updated_at", "2017-05-26 21:03:43.327896"], ["password_digest", "$2a$10$Taz3faEx8pyfm88aYcgQqeuS.grsjOtzeh5uLhZVnIqpgyLwLUqGC"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-59@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Anthony Ruecker"], ["email", "example-59@corgimingle.com"], ["created_at", "2017-05-26 21:03:43.392448"], ["updated_at", "2017-05-26 21:03:43.392448"], ["password_digest", "$2a$10$fYFXEsBFHsqfI2MHCoDZiej1Hvqzr7FYCZBkos/B.I6lmaJVCPWAO"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-60@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Emelia Rutherford III"], ["email", "example-60@corgimingle.com"], ["created_at", "2017-05-26 21:03:43.457994"], ["updated_at", "2017-05-26 21:03:43.457994"], ["password_digest", "$2a$10$5P.4Wuio7y9JIB4nO9N8EO7sv4sVG3BqJBm8p6fDK6SINHzYacsqy"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-61@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Noelia Sauer"], ["email", "example-61@corgimingle.com"], ["created_at", "2017-05-26 21:03:43.521591"], ["updated_at", "2017-05-26 21:03:43.521591"], ["password_digest", "$2a$10$hX33HFh1eGcQbk0xfudwkey6mEDMRHsLreBuYFaGEpg6KKPOveK7."]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-62@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dr. Emil Kreiger"], ["email", "example-62@corgimingle.com"], ["created_at", "2017-05-26 21:03:43.587286"], ["updated_at", "2017-05-26 21:03:43.587286"], ["password_digest", "$2a$10$fjIGTciNjq3oVFR6gedVF.XQ8aFiOC9XyyCItncjJMGlau.mna5we"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-63@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Zion Stehr"], ["email", "example-63@corgimingle.com"], ["created_at", "2017-05-26 21:03:43.650113"], ["updated_at", "2017-05-26 21:03:43.650113"], ["password_digest", "$2a$10$Bd6VWTgk.Nw3A7D/iTP4MeP3FJd1VLdE0kmHlAOKh0Yqrc/aMRvGW"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-64@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ms. Deonte Stoltenberg"], ["email", "example-64@corgimingle.com"], ["created_at", "2017-05-26 21:03:43.713080"], ["updated_at", "2017-05-26 21:03:43.713080"], ["password_digest", "$2a$10$/L3bzA/BJuPKaSNVLTXhN.6l3Y/45c4qPcTpvPKxZGfVrVtPSqaKS"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-65@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Opal Pfannerstill"], ["email", "example-65@corgimingle.com"], ["created_at", "2017-05-26 21:03:43.776500"], ["updated_at", "2017-05-26 21:03:43.776500"], ["password_digest", "$2a$10$A/gqOKi8viKDXj4I0piXw.32GWtpfzVodtTgkLCtJMVscAQfFvnom"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-66@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Myriam Schiller"], ["email", "example-66@corgimingle.com"], ["created_at", "2017-05-26 21:03:43.838356"], ["updated_at", "2017-05-26 21:03:43.838356"], ["password_digest", "$2a$10$WqqB91lzHx/AhxFed3.iOecygg0H96m3MhWT8BGNeqzdkUKjLDrJ."]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-67@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ms. Clyde Kerluke"], ["email", "example-67@corgimingle.com"], ["created_at", "2017-05-26 21:03:43.902512"], ["updated_at", "2017-05-26 21:03:43.902512"], ["password_digest", "$2a$10$qmlyAafwcYFRCgsjQGpYOO/I.rytDsoT8j9ZGGFncV3BFDgq60Wnm"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-68@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Molly Kessler III"], ["email", "example-68@corgimingle.com"], ["created_at", "2017-05-26 21:03:43.966926"], ["updated_at", "2017-05-26 21:03:43.966926"], ["password_digest", "$2a$10$L7hbXOV9ul71pRarU37AIOcPItW.QINLa7KdUmDDsxLkdlHlsvoOK"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-69@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Myrtis Pacocha IV"], ["email", "example-69@corgimingle.com"], ["created_at", "2017-05-26 21:03:44.031547"], ["updated_at", "2017-05-26 21:03:44.031547"], ["password_digest", "$2a$10$9X9H66VkVVQWB1s6lx1F2uvdztRUAZEH08ELOpQoHhCYvBUyDGvC."]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-70@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dallas Bashirian"], ["email", "example-70@corgimingle.com"], ["created_at", "2017-05-26 21:03:44.097142"], ["updated_at", "2017-05-26 21:03:44.097142"], ["password_digest", "$2a$10$fH5K9YpN767XNJuScIqH/eVKPWgiSYpTUWdbQEIkTjeNOPacL3/DK"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-71@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Torrey Herzog"], ["email", "example-71@corgimingle.com"], ["created_at", "2017-05-26 21:03:44.160108"], ["updated_at", "2017-05-26 21:03:44.160108"], ["password_digest", "$2a$10$1jCXCJolx0ovS5IH4Co9QuOnf0oL4RkP0PgfrypJwFYRiLxCXbOHa"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-72@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Hilario Moore"], ["email", "example-72@corgimingle.com"], ["created_at", "2017-05-26 21:03:44.221908"], ["updated_at", "2017-05-26 21:03:44.221908"], ["password_digest", "$2a$10$WNgEP/BMk8YFE9WfHbyp3uLDzk2AathP.mCLkUYzIA9J3E0UBlh9W"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-73@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cassandra Auer Sr."], ["email", "example-73@corgimingle.com"], ["created_at", "2017-05-26 21:03:44.288149"], ["updated_at", "2017-05-26 21:03:44.288149"], ["password_digest", "$2a$10$IsgNW8wIGnkbLZBjMHioYO259FsZbhKgK9UstZdvN.peC5b9uO2BW"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-74@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Linnie Cummerata"], ["email", "example-74@corgimingle.com"], ["created_at", "2017-05-26 21:03:44.352028"], ["updated_at", "2017-05-26 21:03:44.352028"], ["password_digest", "$2a$10$j/xRrw9Dh8STyIgZUZ0FWef2Ci42p1bGsuSFThvULK9a66jAmiciW"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-75@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jayce Erdman"], ["email", "example-75@corgimingle.com"], ["created_at", "2017-05-26 21:03:44.417641"], ["updated_at", "2017-05-26 21:03:44.417641"], ["password_digest", "$2a$10$nyUhRNAvoK1tT/z4mcJEWuxz9vGcOzVsE6qc7bhnw4g29UU9v0YCm"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-76@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jazmyne Mayert"], ["email", "example-76@corgimingle.com"], ["created_at", "2017-05-26 21:03:44.481947"], ["updated_at", "2017-05-26 21:03:44.481947"], ["password_digest", "$2a$10$gUTWFvMhURES1KIiHxsZUuZAleelWyD25Dz0x0BNMceSPM6PKGRFC"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-77@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Austen Roob"], ["email", "example-77@corgimingle.com"], ["created_at", "2017-05-26 21:03:44.549305"], ["updated_at", "2017-05-26 21:03:44.549305"], ["password_digest", "$2a$10$L/5bBobiqkld2tg1jZ.Kxe.ktcM7F42bKONBqJbd1voRn5AGUxw32"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-78@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Anna Blanda"], ["email", "example-78@corgimingle.com"], ["created_at", "2017-05-26 21:03:44.618710"], ["updated_at", "2017-05-26 21:03:44.618710"], ["password_digest", "$2a$10$i8TwgAqtqd4pdJITFO5K9O07BmBJGvwmcILL7cuBvyGGLEcaGR1Ky"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-79@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Alaina Zboncak"], ["email", "example-79@corgimingle.com"], ["created_at", "2017-05-26 21:03:44.681762"], ["updated_at", "2017-05-26 21:03:44.681762"], ["password_digest", "$2a$10$Gj6n0KTlpfXY4MmCKxsOq.eKtkZRl8pHxUxXCLYToztnLGyT4A9r."]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-80@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mittie Becker"], ["email", "example-80@corgimingle.com"], ["created_at", "2017-05-26 21:03:44.747927"], ["updated_at", "2017-05-26 21:03:44.747927"], ["password_digest", "$2a$10$GpotdJGd2MejmhRmY1qU..IExJzpyuFSTTu59d4wPjlGBeO629BwC"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-81@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Doug Corkery"], ["email", "example-81@corgimingle.com"], ["created_at", "2017-05-26 21:03:44.817417"], ["updated_at", "2017-05-26 21:03:44.817417"], ["password_digest", "$2a$10$B5nNP1GA9G01BYuJQpq0/.5s02D.8HeKOOhrsDu56uHD7MOw2VeU."]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-82@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Guy Hammes"], ["email", "example-82@corgimingle.com"], ["created_at", "2017-05-26 21:03:44.884430"], ["updated_at", "2017-05-26 21:03:44.884430"], ["password_digest", "$2a$10$46nO0yVd3.gUU57DzdVEMO3cSnkUPuz1P/v.o4mMFutZ.xz2557d6"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-83@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Hipolito Nikolaus"], ["email", "example-83@corgimingle.com"], ["created_at", "2017-05-26 21:03:44.948920"], ["updated_at", "2017-05-26 21:03:44.948920"], ["password_digest", "$2a$10$4Re88Fqdh7zD/woMwkTWfuORk1prxrxatyp5m8ny2th4rsDB2Btri"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-84@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brisa McKenzie"], ["email", "example-84@corgimingle.com"], ["created_at", "2017-05-26 21:03:45.017823"], ["updated_at", "2017-05-26 21:03:45.017823"], ["password_digest", "$2a$10$IzJif2WlKqLB5Ti.FPnBv.Yylrd71slhtwrbg/c723PdJb7bphigS"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-85@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Miss Lempi Torphy"], ["email", "example-85@corgimingle.com"], ["created_at", "2017-05-26 21:03:45.085379"], ["updated_at", "2017-05-26 21:03:45.085379"], ["password_digest", "$2a$10$h7cprugy1TeFAJEcShbobeyPdeUvxWN3wnOkvyMAcjJoESzQ7ua5m"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-86@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Billy Legros"], ["email", "example-86@corgimingle.com"], ["created_at", "2017-05-26 21:03:45.151712"], ["updated_at", "2017-05-26 21:03:45.151712"], ["password_digest", "$2a$10$oGxa0I0g485xFJyyUW5me.xzBM1X/BTJRAxAdhh0T.upMyMQ6cWxe"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-87@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mr. Maryam Crooks"], ["email", "example-87@corgimingle.com"], ["created_at", "2017-05-26 21:03:45.215837"], ["updated_at", "2017-05-26 21:03:45.215837"], ["password_digest", "$2a$10$jYUNUMrwP/jv8kgAG2ZbUe7qu.kH2KbZWTmZZ.qJzt8j95b375h8O"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-88@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Darion Hudson"], ["email", "example-88@corgimingle.com"], ["created_at", "2017-05-26 21:03:45.278298"], ["updated_at", "2017-05-26 21:03:45.278298"], ["password_digest", "$2a$10$RH5L5oJACwR6nYhZKqjlpOvRKT9HT/NY7e7LPgOx/QINfIrrPm0Pq"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-89@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Josefa Konopelski"], ["email", "example-89@corgimingle.com"], ["created_at", "2017-05-26 21:03:45.342866"], ["updated_at", "2017-05-26 21:03:45.342866"], ["password_digest", "$2a$10$8kzgpbwb2mF8xjvlm3WfIuqNWshwnI.DBScAfL3ix5eHoyph6GmGW"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-90@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Paul Wolf III"], ["email", "example-90@corgimingle.com"], ["created_at", "2017-05-26 21:03:45.411958"], ["updated_at", "2017-05-26 21:03:45.411958"], ["password_digest", "$2a$10$mEzPxxvljjoGgzmdSoPx5ejetxzhJixLf1OeitmTxtQI8uSjbPK4G"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-91@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Carol King"], ["email", "example-91@corgimingle.com"], ["created_at", "2017-05-26 21:03:45.474031"], ["updated_at", "2017-05-26 21:03:45.474031"], ["password_digest", "$2a$10$S7b0PzqJJb.WxcflgcwhxO9bxlWzzl3h5MreF5NNXUIFuikdS9ns6"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-92@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Kailey Walker"], ["email", "example-92@corgimingle.com"], ["created_at", "2017-05-26 21:03:45.540517"], ["updated_at", "2017-05-26 21:03:45.540517"], ["password_digest", "$2a$10$79VPhguBR2KyZot8y.AU6uhjed01sB9oEDCKcbUOVv6dNxar5fMxm"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-93@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Leanne Smith"], ["email", "example-93@corgimingle.com"], ["created_at", "2017-05-26 21:03:45.605821"], ["updated_at", "2017-05-26 21:03:45.605821"], ["password_digest", "$2a$10$DpGijTjDnIZQVXcslKsapep/.kQVy0OKvLpRxawtnEAqQDJvaPhlO"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-94@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cayla Larkin"], ["email", "example-94@corgimingle.com"], ["created_at", "2017-05-26 21:03:45.672564"], ["updated_at", "2017-05-26 21:03:45.672564"], ["password_digest", "$2a$10$UVp55T8UsR6/jQ0LaK65Xu8wHLoMrSBCYI50QFT1uY.mGjmq7hzzS"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-95@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Joshua Kuvalis"], ["email", "example-95@corgimingle.com"], ["created_at", "2017-05-26 21:03:45.738280"], ["updated_at", "2017-05-26 21:03:45.738280"], ["password_digest", "$2a$10$KxiElOo6B2SKwxTBGuyv6e/fKAjMBr3BGtKNw3PHKzReqo05bNXp2"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-96@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Kamryn Hudson Sr."], ["email", "example-96@corgimingle.com"], ["created_at", "2017-05-26 21:03:45.805496"], ["updated_at", "2017-05-26 21:03:45.805496"], ["password_digest", "$2a$10$WYD7q1THdhz/SjNt8Cw89Ot7ipqRYJnHqGU/f8tZBGpaCPia44ExK"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-97@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Kaley Runte"], ["email", "example-97@corgimingle.com"], ["created_at", "2017-05-26 21:03:45.868880"], ["updated_at", "2017-05-26 21:03:45.868880"], ["password_digest", "$2a$10$SP0lnnkURdEFXwRZeonFQ.1YbGz1S.CPsgHpY6yxbBTGihYk225Tm"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-98@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Maurice Watsica"], ["email", "example-98@corgimingle.com"], ["created_at", "2017-05-26 21:03:45.937456"], ["updated_at", "2017-05-26 21:03:45.937456"], ["password_digest", "$2a$10$W6Q05mIx696AEmsl5spgkOcXSCaQjjdDCb52DYya3G/3zWlUGDrWW"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-99@corgimingle.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Giuseppe Berge DVM"], ["email", "example-99@corgimingle.com"], ["created_at", "2017-05-26 21:03:46.001914"], ["updated_at", "2017-05-26 21:03:46.001914"], ["password_digest", "$2a$10$mvb1P58fTHwu61CAP8nWhu9RVXDfWJ1oG5VY2FmRw5XWzYHi1ssPy"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
