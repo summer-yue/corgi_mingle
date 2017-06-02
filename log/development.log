@@ -5635,3 +5635,59 @@ Processing by StaticPagesController#home as HTML
 Completed 200 OK in 41ms (Views: 39.3ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-06-01 23:54:37 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (241.6ms)
+  Rendered layouts/_rails_default.html.erb (77.0ms) [cache miss]
+  Rendered layouts/_shim.html.erb (0.3ms) [cache miss]
+  Rendered layouts/_header.html.erb (1.4ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 344ms (Views: 334.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 23:55:36 -0700
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+     7:   </h2>
+     8:   
+     9:   <% if logged_in? %>
+    10:     Hello, <%= @user.name%>!
+    11:   <% else %>
+    12:     <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+    13:   <% end %>
+  
+app/views/static_pages/home.html.erb:10:in `_app_views_static_pages_home_html_erb___330344739776069947_70366425245760'
+Started GET "/" for 127.0.0.1 at 2017-06-01 23:56:58 -0700
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_rails_default.html.erb (57.4ms) [cache miss]
+  Rendered layouts/_shim.html.erb (0.3ms) [cache miss]
+  Rendered layouts/_header.html.erb (1.0ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 78ms (Views: 76.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 23:57:21 -0700
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_rails_default.html.erb (56.4ms) [cache miss]
+  Rendered layouts/_shim.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_header.html.erb (1.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 79ms (Views: 77.0ms | ActiveRecord: 0.8ms)
+
+

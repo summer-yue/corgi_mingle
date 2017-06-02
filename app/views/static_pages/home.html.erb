@@ -5,8 +5,12 @@
     <a href='https://aqueous-brushlands-71078.herokuapp.com'>social network for corgis</a> in the world !
     <br/> If you are a pembroke welsh corgi, cardigan welsh corgi, or even a swedish vallhund, <br/>here you will find your soulmates.
   </h2>
-
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  
+  <% if logged_in? %>
+  <% else %>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <% end %>
+  
 </div>
 
 <div class="center jumbotron">
