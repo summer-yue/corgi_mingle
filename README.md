@@ -1,4 +1,8 @@
-# Corgi Mingle Twitter Application
+# Corgi Mingle Application
+
+Check out the website live here and meet other corgis!
+
+https://aqueous-brushlands-71078.herokuapp.com/contact
 
 ## Getting started
 
